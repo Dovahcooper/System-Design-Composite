@@ -1,0 +1,21 @@
+Plans for Mechanics to Replicate
+
+Dishonored Mechanics
+	Dark Vision
+		- highlight marked objects through walls
+	Agility
+		- double jump at peak of jump when holding jump
+	Blink
+		- 3 Stages upgradable
+		- first stage: short blink
+		- second stage: long blink
+		- third stage: set a location within small blink range and blink back to it at infinite range
+	Time Warp 
+		- Just create an upgradable bullet time functionality
+
+Hitman Mechanics
+	Disguises
+		- make it possible to swap disguises when near a designated object, either person or just a random outfit laying around
+
+
+
