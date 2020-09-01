@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7693185438081084732}
   m_Layer: 0
   m_Name: EdgeColliders
-  m_TagString: Untagged
+  m_TagString: Ledge
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -86,7 +86,7 @@ GameObject:
   - component: {fileID: 4799914118181037524}
   m_Layer: 0
   m_Name: Balcony_Long
-  m_TagString: Untagged
+  m_TagString: Environment
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
