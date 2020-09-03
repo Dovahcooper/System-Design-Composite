@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7507538711288947585}
   - component: {fileID: 2903968876400558078}
   - component: {fileID: 5614120211213233537}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: EdgeColliders
   m_TagString: Ledge
   m_Icon: {fileID: 0}
@@ -98,7 +98,7 @@ GameObject:
   - component: {fileID: 7488831223161902992}
   - component: {fileID: 2019184361907055095}
   - component: {fileID: 2989219093570245509}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BuildingA
   m_TagString: Environment
   m_Icon: {fileID: 0}

@@ -5,7 +5,7 @@ using UnityEngine;
 public class Ability : MonoBehaviour
 {
     public KeyCode abilityKey;
-    public KeyCode cancelKey;
+    public KeyCode cancelKey = KeyCode.F;
 
     private void Start()
     {

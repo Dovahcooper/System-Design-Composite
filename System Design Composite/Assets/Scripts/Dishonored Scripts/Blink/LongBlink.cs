@@ -2,18 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Blink : Ability
+class LongBlink : Ability
 {
     Camera mainCam;
 
-    bool waiting = false;
-
-    float radius = 0.5f;
+    bool aiming = false;
 
     Vector3 blinkPos;
 
+    public GameObject blinkSphere;
 
-    public float maxDist = 30f;
+    public float maxDist = 20f;
     public float blinkTime;
     public Animator blinkAnim;
 
@@ -21,6 +20,8 @@ public class Blink : Ability
     void Awake()
     {
         mainCam = Camera.main;
+
+        abilityKey = KeyCode.Mouse1;
     }
 
     // Update is called once per frame
@@ -28,7 +29,7 @@ public class Blink : Ability
     {
         if (Input.GetKeyDown(abilityKey))
         {
-            waiting = true;
+            aiming = true;
         }
         else if (Input.GetKeyUp(abilityKey))
         {
@@ -37,20 +38,22 @@ public class Blink : Ability
 
         if (Input.GetKeyDown(cancelKey))
         {
-            waiting = false;
+            aiming = false;
         }
 
-        if (waiting)
+        if (aiming)
         {
             Aim();
         }
+
+        blinkSphere.SetActive(aiming);
     }
 
     public override void Activate()
     {
         base.Activate();
 
-        if(waiting)
+        if (aiming)
         {
             StartCoroutine(BlinkAnimation(blinkTime));
         }
@@ -58,7 +61,7 @@ public class Blink : Ability
 
     IEnumerator BlinkAnimation(float animTime)
     {
-        waiting = false;
+        aiming = false;
         blinkAnim.SetTrigger("StartBlink");
 
         yield return new WaitForSeconds(animTime);
@@ -70,13 +73,17 @@ public class Blink : Ability
     public void Aim()
     {
         RaycastHit hitInfo;
-        if(Physics.Raycast(mainCam.transform.position, mainCam.transform.forward, out hitInfo, maxDist))
+        LayerMask maskLayer = LayerMask.GetMask("Environment");
+        if (Physics.Raycast(mainCam.transform.position, mainCam.transform.forward, out hitInfo, maxDist, maskLayer))
         {
-            blinkPos = hitInfo.point + hitInfo.normal * radius;
+            float radius = GetComponent<CapsuleCollider>().radius;
+            blinkPos = hitInfo.point + (hitInfo.normal * radius);
         }
         else
         {
-            blinkPos = mainCam.transform.position + mainCam.transform.forward * maxDist;
+            blinkPos = mainCam.transform.position + (mainCam.transform.forward * maxDist);
         }
+
+        blinkSphere.transform.position = blinkPos;
     }
 }

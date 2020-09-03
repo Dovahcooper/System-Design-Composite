@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3702825236425276843}
   - component: {fileID: 3909876047970532584}
   - component: {fileID: 8088728875911269384}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Balcony_Medium
   m_TagString: Environment
   m_Icon: {fileID: 0}
@@ -108,7 +108,7 @@ GameObject:
   - component: {fileID: 9000255734731991734}
   - component: {fileID: 3557727225460994165}
   - component: {fileID: 2256452760606426194}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: EdgeColliders
   m_TagString: Ledge
   m_Icon: {fileID: 0}
